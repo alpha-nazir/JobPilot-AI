@@ -1,0 +1,577 @@
+.job-applicants-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.applicants-header {
+    margin-bottom: 30px;
+}
+
+.applicants-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.applicants-back-btn:hover {
+    border-color: #3882F6;
+    color: #3882F6;
+}
+
+.applicants-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.applicants-heading h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.applicants-heading p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.applicants-total-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    padding: 18px 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: #3882F6;
+}
+
+.applicants-total-card strong {
+    display: block;
+    font-size: 23px;
+    color: var(--text-primary);
+}
+
+.applicants-total-card span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.applicants-content {
+    margin-top: 25px;
+    min-width: 0;
+}
+
+.applicants-empty,
+.applicants-error,
+.applicants-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 65px 25px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    color: var(--text-secondary);
+}
+
+.applicants-empty svg {
+    color: #3882F6;
+}
+
+.applicants-empty h2 {
+    color: var(--text-primary);
+    font-size: 20px;
+}
+
+.applicants-empty p {
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+.applicants-loading {
+    min-height: 300px;
+    border: none;
+    background: transparent;
+}
+
+.applicants-spinner {
+    animation: applicants-spin 1s linear infinite;
+    color: #3882F6;
+}
+
+@keyframes applicants-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.applicants-error button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #3882F6;
+    color: white;
+    cursor: pointer;
+}
+
+.applicants-list {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+}
+
+.applicant-card {
+    min-width: 0;
+    padding: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.applicant-card:hover {
+    border-color: rgba(56, 130, 246, 0.45);
+}
+
+.applicant-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.applicant-card p {
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.applicant-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(56, 130, 246, 0.12);
+    color: #3882F6;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Applicant Status */
+
+.applicant-status-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.applicant-status-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.applicant-status-control label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.applicant-status-control select {
+    min-width: 150px;
+    max-width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.applicant-status-control select:focus {
+    border-color: #3882F6;
+}
+
+.applicant-status-control select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.applicant-status-control select:hover {
+    border-color: #3882F6;
+}
+
+.applicant-status-control select option {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .applicant-status-control select {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] .applicant-status-control select option {
+    background-color: #161B2A;
+    color: #F1F5F9;
+}
+
+html[data-theme="light"] .applicant-status-control select {
+    color-scheme: light;
+}
+
+html[data-theme="light"] .applicant-status-control select option {
+    background-color: #FFFFFF;
+    color: #1E293B;
+}
+
+/* Resume Button */
+
+.view-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border: 1px solid rgba(56, 130, 246, 0.35);
+    border-radius: 8px;
+    background: rgba(56, 130, 246, 0.1);
+    color: #3882F6;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-resume-btn:hover {
+    background: #3882F6;
+    color: #ffffff;
+    border-color: #3882F6;
+    transform: translateY(-1px);
+}
+
+.view-resume-btn:active {
+    transform: translateY(0);
+}
+
+.view-resume-btn:focus-visible {
+    outline: 2px solid #3882F6;
+    outline-offset: 3px;
+}
+
+/* Schedule Interview Button */
+
+.schedule-interview-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #3882F6;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.schedule-interview-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Interview Modal */
+
+.interview-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    overflow-y: auto;
+}
+
+.interview-modal {
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.interview-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.interview-modal-header h2 {
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.interview-modal-header p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.interview-modal-header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.interview-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.interview-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.interview-form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.interview-form-group input,
+.interview-form-group select,
+.interview-form-group textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.interview-form-group input:focus,
+.interview-form-group select:focus,
+.interview-form-group textarea:focus {
+    border-color: #3882F6;
+    box-shadow: 0 0 0 2px rgba(56, 130, 246, 0.12);
+}
+
+.interview-form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.interview-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.interview-cancel-btn,
+.interview-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.interview-cancel-btn {
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.interview-submit-btn {
+    border: none;
+    background: #3882F6;
+    color: #fff;
+}
+
+.interview-submit-btn:hover {
+    background: #2563eb;
+}
+
+.interview-submit-btn:disabled,
+.interview-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .job-applicants-page {
+        padding: 28px 24px;
+    }
+
+    .applicant-card {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .job-applicants-page {
+        padding: 20px 15px;
+    }
+
+    .applicants-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .applicants-heading h1 {
+        font-size: 23px;
+    }
+
+    .applicants-total-card {
+        width: 100%;
+    }
+
+    .applicants-empty,
+    .applicants-error {
+        padding: 45px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .applicant-status-section {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .applicant-status-control {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .applicant-status-control select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .view-resume-btn {
+        padding: 9px 12px;
+    }
+
+    .interview-modal {
+        padding: 20px;
+    }
+
+    .interview-modal-header h2 {
+        font-size: 19px;
+    }
+
+    .interview-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .interview-cancel-btn,
+    .interview-submit-btn {
+        width: 100%;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 380px) {
+    .job-applicants-page {
+        padding: 18px 12px;
+    }
+
+    .applicants-heading h1 {
+        font-size: 21px;
+    }
+
+    .applicant-card {
+        padding: 16px;
+    }
+
+    .applicant-status-control {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .applicant-status-control select {
+        width: 100%;
+    }
+
+    .interview-modal-overlay {
+        padding: 10px;
+    }
+
+    .interview-modal {
+        padding: 17px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .applicants-spinner {
+        animation: none;
+    }
+
+    .applicants-back-btn,
+    .applicant-card,
+    .view-resume-btn,
+    .schedule-interview-btn {
+        transition: none;
+    }
+}

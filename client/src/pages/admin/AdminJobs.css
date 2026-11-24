@@ -1,0 +1,442 @@
+.admin-jobs-page {
+    min-height: 100vh;
+    padding: 40px 7% 80px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.admin-jobs-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.admin-jobs-header {
+    margin-bottom: 30px;
+}
+
+.admin-jobs-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    margin-bottom: 22px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-jobs-back-btn:hover {
+    color: #3882f6;
+}
+
+.admin-jobs-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    padding: 7px 12px;
+    border-radius: 6px;
+    background: rgba(56, 130, 246, 0.12);
+    color: #3882f6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-jobs-header h1 {
+    margin: 15px 0 8px;
+    font-size: 32px;
+    font-weight: 750;
+    color: var(--text-primary);
+}
+
+.admin-jobs-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Filters */
+
+.admin-jobs-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-jobs-search {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 15px;
+    height: 47px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.admin-jobs-search svg {
+    flex-shrink: 0;
+}
+
+.admin-jobs-search input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.admin-jobs-search input::placeholder {
+    color: var(--text-secondary);
+}
+
+.admin-jobs-filters select {
+    min-width: 165px;
+    height: 47px;
+    padding: 0 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    outline: none;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Jobs Section */
+
+.admin-jobs-section {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 13px;
+    background: var(--bg-secondary);
+}
+
+.admin-jobs-section-heading {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-jobs-section-heading h2 {
+    margin: 0 0 6px;
+    color: var(--text-primary);
+    font-size: 19px;
+}
+
+.admin-jobs-section-heading p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Job Cards */
+
+.admin-jobs-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-job-card {
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 23px 24px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+
+.admin-job-card:last-child {
+    border-bottom: none;
+}
+
+.admin-job-card:hover {
+    background: rgba(56, 130, 246, 0.04);
+}
+
+.admin-job-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.admin-job-info h3 {
+    margin: 0 0 7px;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.admin-job-company {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.admin-job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+    margin-bottom: 12px;
+}
+
+.admin-job-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.admin-job-recruiter {
+    color: var(--text-secondary);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.admin-job-recruiter strong {
+    color: var(--text-primary);
+}
+
+.admin-job-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Status */
+
+.admin-job-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    font-size: 11px;
+    font-weight: 650;
+    text-transform: capitalize;
+}
+
+.admin-job-status.closed {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.admin-job-status.draft {
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+}
+
+.admin-job-type {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+/* Delete Button */
+
+.admin-job-delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    font-size: 11px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.admin-job-delete-btn:hover:not(:disabled) {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.admin-job-delete-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading and Empty States */
+
+.admin-jobs-state {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.admin-jobs-state h3 {
+    margin: 5px 0 0;
+    color: var(--text-primary);
+}
+
+.admin-jobs-state p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.admin-jobs-state button {
+    margin-top: 8px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #3882f6;
+    color: #fff;
+    cursor: pointer;
+}
+
+.admin-jobs-loading {
+    color: #3882f6;
+    animation: admin-jobs-spin 1s linear infinite;
+}
+
+@keyframes admin-jobs-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .admin-jobs-page {
+        padding: 35px 5% 65px;
+    }
+
+    .admin-job-card {
+        gap: 15px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .admin-jobs-page {
+        padding: 28px 16px 55px;
+    }
+
+    .admin-jobs-header {
+        margin-bottom: 25px;
+    }
+
+    .admin-jobs-back-btn {
+        margin-bottom: 18px;
+    }
+
+    .admin-jobs-header h1 {
+        font-size: 26px;
+    }
+
+    .admin-jobs-header p {
+        font-size: 13px;
+    }
+
+    .admin-jobs-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 11px;
+    }
+
+    .admin-jobs-search {
+        width: 100%;
+    }
+
+    .admin-jobs-filters select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .admin-jobs-section-heading {
+        padding: 18px;
+    }
+
+    .admin-jobs-section-heading h2 {
+        font-size: 17px;
+    }
+
+    .admin-job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+        padding: 19px 17px;
+    }
+
+    .admin-job-info {
+        width: 100%;
+    }
+
+    .admin-job-info h3 {
+        font-size: 16px;
+    }
+
+    .admin-job-meta {
+        gap: 10px 15px;
+    }
+
+    .admin-job-actions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 380px) {
+    .admin-jobs-page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .admin-job-card {
+        padding: 17px 13px;
+    }
+
+    .admin-job-meta {
+        flex-direction: column;
+        gap: 9px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-job-card,
+    .admin-job-delete-btn {
+        transition: none;
+    }
+
+    .admin-jobs-loading {
+        animation-duration: 2s;
+    }
+}
