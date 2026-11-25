@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import "./SeekerDashboard.css";
+import "./seekerDashboard.css";
 
 const SeekerDashboard = () => {
     const [applications, setApplications] = useState([]);
