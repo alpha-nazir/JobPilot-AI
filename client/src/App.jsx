@@ -5,7 +5,7 @@ import PostJob from "./pages/recruiter/PostJob";
 import EditJob from "./pages/recruiter/EditJob";
 import ApplyJob from "./pages/seeker/ApplyJob";
 import SavedJobs from "./pages/seeker/SavedJobs";
-import SeekerDashboard from "./pages/seeker/SeekerDashboard";
+import SeekerDashboard from "./pages/seeker/seekerDashboard";
 import ResumeManagement from "./pages/seeker/ResumeManagement";
 import AIResumeAnalyzer from "./pages/seeker/AIResumeAnalyzer";
 import AIJobAssistant from "./pages/seeker/AIJobAssistant";
