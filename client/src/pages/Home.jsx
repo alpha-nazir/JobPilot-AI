@@ -9,8 +9,13 @@ import {
     Bot,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
+    const { user, isAuthenticated } = useAuth();
+
+    const canAccessAI = isAuthenticated && user?.role === "job_seeker";
+
     return (
         <main className="home-page">
 
@@ -136,29 +141,33 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        <div className="feature-card">
-                            <FileText size={30} />
-                            <h3>AI Resume Analyzer</h3>
-                            <p>
-                                Analyze your resume and identify areas
-                                for improvement.
-                            </p>
-                            <Link to="/ai-resume-analyzer">
-                                Get Started <ArrowRight size={16} />
-                            </Link>
-                        </div>
+                        {canAccessAI && (
+                            <>
+                                <div className="feature-card">
+                                    <FileText size={30} />
+                                    <h3>AI Resume Analyzer</h3>
+                                    <p>
+                                        Analyze your resume and identify areas
+                                        for improvement.
+                                    </p>
+                                    <Link to="/ai-resume-analyzer">
+                                        Get Started <ArrowRight size={16} />
+                                    </Link>
+                                </div>
 
-                        <div className="feature-card">
-                            <Bot size={30} />
-                            <h3>AI Job Assistant</h3>
-                            <p>
-                                Get AI-powered assistance throughout
-                                your job search.
-                            </p>
-                            <Link to="/ai-job-assistant">
-                                Get Started <ArrowRight size={16} />
-                            </Link>
-                        </div>
+                                <div className="feature-card">
+                                    <Bot size={30} />
+                                    <h3>AI Job Assistant</h3>
+                                    <p>
+                                        Get AI-powered assistance throughout
+                                        your job search.
+                                    </p>
+                                    <Link to="/ai-job-assistant">
+                                        Get Started <ArrowRight size={16} />
+                                    </Link>
+                                </div>
+                            </>
+                        )}
 
                     </div>
                 </div>
