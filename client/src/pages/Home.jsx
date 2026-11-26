@@ -14,7 +14,8 @@ import { useAuth } from "../context/AuthContext";
 const Home = () => {
     const { user, isAuthenticated } = useAuth();
 
-    const canAccessAI = isAuthenticated && user?.role === "job_seeker";
+    const canSeeAI =
+        !isAuthenticated || user?.role === "job_seeker";
 
     return (
         <main className="home-page">
@@ -141,7 +142,7 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        {canAccessAI && (
+                        {canSeeAI && (
                             <>
                                 <div className="feature-card">
                                     <FileText size={30} />
