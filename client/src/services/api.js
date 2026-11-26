@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL.replace(/\/+$/, "");
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL: `${API_URL}/api`,
     headers: {
         "Content-Type": "application/json",
     },
@@ -16,7 +18,6 @@ api.interceptors.request.use(
             config.headers.Authorization = `Bearer ${token}`;
         }
 
-        // Let the browser set the multipart boundary for file uploads
         if (config.data instanceof FormData) {
             config.headers.delete("Content-Type");
         }
