@@ -8,7 +8,7 @@ The platform also includes an administrative dashboard for managing users and jo
 
 ## 🌐 Live Demo
 
-**Live Application:** [https://jobpilot-k6b56rlvf-alpha-coder6.vercel.app/]
+**Live Application:** [https://jobpilot-ai-tawny.vercel.app/]
 
 ## ✨ Features
 
