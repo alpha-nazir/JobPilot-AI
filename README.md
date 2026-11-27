@@ -10,6 +10,29 @@ The platform also includes an administrative dashboard for managing users and jo
 
 **Live Application:** [https://jobpilot-ai-tawny.vercel.app/]
 
+## 📸 Screenshots
+
+### Home Page
+<img src="screenshots/home.png" width="100%" alt="JobPilot AI Home Page">
+
+### Job Listings
+<img src="screenshots/jobs.png" width="100%" alt="Job Listings">
+
+### Job Seeker Dashboard
+<img src="screenshots/seeker-dashboard.png" width="100%" alt="Job Seeker Dashboard">
+
+### AI Resume Analyzer
+<img src="screenshots/ai-resume-analyzer.png" width="100%" alt="AI Resume Analyzer">
+
+### AI Job Assistant
+<img src="screenshots/ai-job-assistant.png" width="100%" alt="AI Job Assistant">
+
+### Recruiter Dashboard
+<img src="screenshots/recruiter-dashboard.png" width="100%" alt="Recruiter Dashboard">
+
+### Admin Dashboard
+<img src="screenshots/admin-dashboard.png" width="100%" alt="Admin Dashboard">
+
 ## ✨ Features
 
 ### 👨‍💻 Job Seeker
